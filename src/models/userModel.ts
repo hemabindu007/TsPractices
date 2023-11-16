@@ -5,6 +5,7 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 const userSchema = new Schema({
   username: String,
   email: String,
+  password : String
   // Add more fields as needed
 });
 
