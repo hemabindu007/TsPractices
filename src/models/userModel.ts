@@ -13,10 +13,11 @@ const userSchema = new Schema({
 interface IUser extends Document {
   username: string;
   email: string;
+  password : string
   // Add more fields as needed
 }
 
 // Create the model
-const user = mongoose.model('User', userSchema);
+const user = mongoose.model('Users', userSchema);
 
 export default user;

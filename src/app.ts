@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 // import cors from 'cors'
 import swaggerSpec from '../swagger/config'
 import swaggerUi from 'swagger-ui-express'
+import authRoute from './routes/auth'
 const app = express();
 mongoose.connect('mongodb://localhost:27017/abc')
 .then(()=>{
@@ -16,7 +17,8 @@ mongoose.connect('mongodb://localhost:27017/abc')
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(bodyParser.json())
-app.use('/user',useroute)
+app.use('/users',useroute)
+app.use('/auth',authRoute)
 app.listen(3300,()=>{
     console.log("server is running......!")
 })
